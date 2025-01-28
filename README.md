@@ -103,3 +103,11 @@ Execute the Go file:
 ```bash
 go run main.go
 ```
+
+#### Notes:
+
+I have some problems with the SSH agent on Windows, so I need to run the command:
+```bash
+eval $(ssh-agent -s)
+```
+
