@@ -48,14 +48,14 @@ extern "C" void AddButton(int windowId, const char* label, int x, int y, int wid
     });
 }
 
-extern "C" void ShowWindow(int windowId)
+extern "C" void WxShowWindow(int windowId)
 {
     auto it = windows.find(windowId);
     if (it == windows.end()) return;
     it->second->Show();
 }
 
-extern "C" void CloseWindow(int windowId)
+extern "C" void WxCloseWindow(int windowId)
 {
     auto it = windows.find(windowId);
     if (it == windows.end()) return;
