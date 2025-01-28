@@ -11,7 +11,7 @@ typedef void (*CallbackFunc)(int);
 // External C functions
 extern int CreateWindow(const char* title, int width, int height);
 extern void AddButton(int windowId, const char* label, int x, int y, int width, int height, CallbackFunc callback, int id);
-extern void ShowWindow(int windowId);
+extern void WxShowWindow(int windowId);
 extern void RunEventLoop();
 extern void Cleanup();
 
@@ -72,7 +72,7 @@ func main() {
 	C.AddButton(windowID, buttonLabel, 150, 100, 100, 50, C.CallbackFunc(C.CCallback), C.int(callbackID))
 
 	// Show the window and run the event loop
-	C.ShowWindow(windowID)
+	C.WxShowWindow(windowID)
 	C.RunEventLoop()
 
 	// Cleanup
