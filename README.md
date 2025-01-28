@@ -104,6 +104,29 @@ Execute the Go file:
 go run main.go
 ```
 
+### Windows Setup with MSYS2 MinGW64
+
+1. Install Dependencies
+
+Update the package manager and install the required tools:
+
+pacman -Syu
+pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-make
+
+2. Build wxWidgets
+
+Navigate to the wxWidgets build directory and compile the library:
+
+cd wxWidgets-3.2.6/build/msw/
+mingw32-make -f makefile.gcc SHARED=1 UNICODE=1 BUILD=release
+
+3. Copy Required DLLs
+
+Copy wxmsw32u_core_gcc_custom.dll from the compiled wxWidgets libraries to the project directory:
+
+cp ./wxWidgets-3.2.6/lib/gcc_dll/wxmsw32u_core_gcc_custom.dll ./
+
+
 #### Notes:
 
 I have some problems with the SSH agent on Windows, so I need to run the command:
